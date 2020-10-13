@@ -6,7 +6,6 @@ curr_dir=$(pwd)
 theme_base_path="${curr_dir}/themes"
 theme_dir_path="${theme_base_path}/${theme_name}"
 zip_base_path="${curr_dir}/zip"
-zip_dir_path="${zip_base_path}/${theme_name}"
 
 show_help() {
     echo "Usage:"
@@ -25,29 +24,21 @@ if [ ! -d "${theme_dir_path}" ]; then
     exit 1
 fi
 
-if [ ! -d "${zip_dir_path}" ]; then
-
-    echo "Zip dir does not exist: ${zip_dir_path}"
-    echo "Creating..."
-    mkdir -p "${zip_dir_path}"
-fi
-
 theme_file="${theme_dir_path}/theme.css"
-zip_file="${zip_dir_path}/${theme_name}.zip"
+new_theme_file="${theme_dir_path}/${theme_name}.css"
+zip_file="${theme_name}.zip"
+zip_file_path="${zip_base_path}/${zip_filetheme_name}"
 
-if [ -f "${zip_file}" ]; then
+if [ -f "${zip_file_path}" ]; then
 
-    echo "Zip file exists: ${zip_file}"
-    echo "Overwriting..."
-
-else
-
-    echo "Creating zip file..."
+    echo "Caution: Zip file exists"
 
 fi
 
-zip "${zip_file}" "${theme_file}"
+echo "Creating zip file: ${zip_file_path}"
+zip "${zip_file_path}" "${theme_file}"
 
+cd "${zip_base_path}"
 echo "Renaming theme.css to ${theme_name}.css"
 printf "@ theme.css\n@=$theme_name.css\n"
 printf "@ theme.css\n@=$theme_name.css\n" | zipnote -w "${zip_file}"
