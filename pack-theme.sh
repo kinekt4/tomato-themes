@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-theme_name=$1
 curr_dir=$(pwd)
+theme_name=$1
 
 theme_base_path="${curr_dir}/themes"
 theme_dir_path="${theme_base_path}/${theme_name}"
