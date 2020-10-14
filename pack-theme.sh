@@ -25,9 +25,9 @@ if [ ! -d "${theme_dir_path}" ]; then
 fi
 
 theme_file="theme.css"
-# theme_file_path="${theme_dir_path}/${theme_file}"
+theme_file_path="${theme_dir_path}/${theme_file}"
 new_theme_file="${theme_name}.css"
-new_theme_file_path="${theme_dir_path}/${new_theme_file}"
+# new_theme_file_path="${theme_dir_path}/${new_theme_file}"
 zip_file="${theme_name}.zip"
 zip_file_path="${zip_base_path}/${zip_file}"
 
@@ -38,7 +38,7 @@ if [ -f "${zip_file_path}" ]; then
 
 fi
 
-dos2unix "${new_theme_file_path}"
+dos2unix "${theme_file_path}"
 
 echo "Creating zip file: ${zip_file_path}"
 cd "${theme_dir_path}"
