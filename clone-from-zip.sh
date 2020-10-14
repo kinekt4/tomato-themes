@@ -60,4 +60,6 @@ printf "@ ${theme_file}\n@=${orig_theme_file}\n" | zipnote -w "${new_zip_file_pa
 
 unzip "${new_zip_file_path}" -d "${new_theme_dir_path}"
 
+dos2unix "${new_theme_file_path}"
+
 echo "Done."
