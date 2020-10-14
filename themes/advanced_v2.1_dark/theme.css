@@ -162,6 +162,7 @@ table#container td#header div.title:before {
   font-size: 18px !important;
   font-weight: 600 !important;
   padding-right: 5px !important;
+  color: limegreen;
 }
 
 small a,
@@ -277,8 +278,7 @@ table#container td#header div.title {
     position: absolute;
     top: 0;
     line-height: 60px;
-    text-align: center;
-    padding-left: 0px;
+    padding-left: 25px;
 }
 
 table#container td#header div.version {
@@ -335,7 +335,7 @@ td#navi a.indent2 {
     margin-left: 0;
     height: 25px;
     line-height: 25px;
-    padding: 0 0 0 55px;
+    padding: 0 0 0 45px;
 }
 
 td#navi a.indent2.active {
