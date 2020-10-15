@@ -60,3 +60,8 @@ In a compatible router that supports TTB (TomatoThemeBase), go to the Administra
     Color Scheme: Online From TTB
     TTB theme name: advanced_v2_dark (for example)
     TTB URL: https://github.com/kinekt4/tomato-themes/raw/main/zip
+
+## Further Reading
+
+* https://freshtomato.org
+* http://tomatousb.org/mods
