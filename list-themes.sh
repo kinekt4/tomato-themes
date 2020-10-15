@@ -7,3 +7,4 @@ zip_base_path="${curr_dir}/zip"
 
 cd "${zip_base_path}"
 tree -L 1 .
+
