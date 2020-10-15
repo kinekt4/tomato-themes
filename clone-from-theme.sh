@@ -29,6 +29,22 @@ if [ ! -d "${theme_dir_path}" ]; then
 
     echo "Theme dir not found: ${theme_dir_path}"
     exit 1
+    
+fi
+
+if [ -d ${new_theme_dir_path} ]; then
+
+    echo "New theme dir exists: ${new_theme_dir_path}"
+
+    read -p "Continue? [y/N] " overwrite_new_dir
+
+    if [ "${overwrite_new_dir}" != 'y' ]; then
+
+        echo "Exit."
+        exit 1
+
+    fi
+
 fi
 
 echo "Copying dir: ${theme_dir_path}"

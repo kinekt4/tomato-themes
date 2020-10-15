@@ -53,12 +53,26 @@ cp "${zip_file_path}" "${new_zip_file_path}"
 if [ ! -d "${new_theme_dir_path}" ]; then
 
     mkdir -p "${new_theme_dir_path}"
+
+else
+
+    echo "New theme dir exists: ${new_theme_dir_path}"
+
+    read -p "Continue? [y/N] " overwrite_new_dir
+
+    if [ "${overwrite_new_dir}" != 'y' ]; then
+
+        echo "Exit."
+        exit 1
+
+    fi
+
 fi
 
 echo "Renaming ${theme_file} to ${orig_theme_file}"
 printf "@ ${theme_file}\n@=${orig_theme_file}\n" | zipnote -w "${new_zip_file_path}"
 
-unzip "${new_zip_file_path}" -d "${new_theme_dir_path}"
+unzip -o "${new_zip_file_path}" -d "${new_theme_dir_path}"
 
 dos2unix "${new_theme_file_path}"
 
