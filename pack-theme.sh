@@ -33,8 +33,16 @@ zip_file_path="${zip_base_path}/${zip_file}"
 
 if [ -f "${zip_file_path}" ]; then
 
-    echo "Caution: Zip file exists"
-    echo "Overwriting..."
+    echo "Zip file exists: ${zip_file_path}"
+
+    read -p "Continue? [y/N] " overwrite_zip_file
+
+    if [ "${overwrite_zip_file}" != 'y' ]; then
+
+        echo "Exit."
+        exit 1
+
+    fi
 
 fi
 
