@@ -66,7 +66,7 @@ find "${zip_base_path}" -type f | while read input_file; do
         mv ./* "${theme_dir_path}/."
         # RM INNER DIR
         cd "${theme_dir_path}"
-        rm -rf "${inner_theme_dir_path}"else
+        rm -rf "${inner_theme_dir_path}"
 
     else
 
@@ -75,9 +75,12 @@ find "${zip_base_path}" -type f | while read input_file; do
     fi
 
     theme_file_path="${theme_dir_path}/${theme_file}"
-    custom_theme_file_path="${new_theme_dir_path}/${custom_theme_file}"
+    custom_theme_file_path="${theme_dir_path}/${custom_theme_file}"
 
     if [ -f "${theme_file_path}" ]; then
+
+        echo "theme_file_path: ${theme_file_path}"
+        echo "custom_theme_file_path: ${custom_theme_file_path}"
 
         mv "${theme_file_path}" "${custom_theme_file_path}"
         dos2unix "${custom_theme_file_path}"
